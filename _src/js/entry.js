@@ -43,8 +43,18 @@ function appendImg(src) {
 }
 
 function draw(image, size) {
-    const width = image.width || size;
-    const height = image.height || size;
+    const aspect = image.width / image.height;
+    let width = image.width || size;
+    let height = image.height || size;
+    if (width > size) {
+        width = size;
+        height = width / aspect;
+    }
+    if (height > size) {
+        height = size;
+        width = height * aspect;
+    }
+    console.log(width, height);
     const x = (size - width) / 2;
     const y = (size - height) / 2;
     ctx.save();
