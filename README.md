@@ -2,6 +2,9 @@
 
 Convert to square image.
 
+Try it here.
+https://shuuuuun.github.io/square-image/
+
 余白を白で埋めて正方形にします。
 
 ブラウザにより画質や色味が変化する可能性があります。
