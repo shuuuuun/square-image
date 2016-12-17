@@ -2,6 +2,7 @@ import FileSelector from './modules/FileSelector';
 
 const MAX_FILE_SIZE = 15 * 1000 * 1000; // (byte), 5MB
 const MAX_CANVAS_SIZE = 2000; // 大きすぎるとiosなどで動かない
+const BG_COLOR = '#fff';
 
 const input = document.querySelector('.js-input-image');
 const preview = document.querySelector('.js-preview');
@@ -58,7 +59,7 @@ function draw(image, size) {
     const x = (size - width) / 2;
     const y = (size - height) / 2;
     ctx.save();
-    ctx.fillStyle = '#fff';
+    ctx.fillStyle = BG_COLOR;
     ctx.fillRect(0, 0, size, size);
     ctx.beginPath();
     ctx.drawImage(image, x, y, width, height);
