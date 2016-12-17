@@ -6,17 +6,17 @@
     <title>square-image</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <link rel="canonical" href="http://localhost/">
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
     <link rel="stylesheet" href="./css/app.css">
   </head>
   <body>
     <div class="wrapper">
-      <h1>square-image</h1>
-      <label>
+      <h1 class="title">square-image</h1>
+      <div class="select">
         <input class="js-input-image" type="file" accept="image/*">
-      </label>
-      <div class="preview js-preview">
-        <canvas class="canvas js-canvas"></canvas>
       </div>
+      <canvas class="canvas js-canvas"></canvas>
+      <div class="preview js-preview"></div>
     </div>
     <script src="./js/script.js"></script>
   </body>
