@@ -4,8 +4,8 @@ prepend ConfigBlock
   - page_name = ''
 
 block ContentBlock
-  h1= title
-  label
+  h1.title= title
+  div.select
     input.js-input-image(type="file" accept="image/*")
+  canvas.canvas.js-canvas
   div.preview.js-preview
-    canvas.canvas.js-canvas
