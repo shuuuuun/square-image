@@ -1,6 +1,7 @@
 import FileSelector from './modules/FileSelector';
 
 const MAX_FILE_SIZE = 15 * 1000 * 1000; // (byte), 5MB
+const MAX_CANVAS_SIZE = 2000; // 大きすぎるとiosなどで動かない
 
 const input = document.querySelector('.js-input-image');
 const preview = document.querySelector('.js-preview');
@@ -28,7 +29,8 @@ fileSelector.on('select_file', files => {
 });
 
 fileSelector.on('load_img', image => {
-    const size = Math.max(image.width, image.height);
+    const size = Math.min(Math.max(image.width, image.height), MAX_CANVAS_SIZE);
+    console.log(image.width, image.height, size);
     setCanvasSize(size, size);
     draw(image, size);
     appendImg(canvas.toDataURL());
