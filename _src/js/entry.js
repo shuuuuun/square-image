@@ -1,7 +1,7 @@
 import FileSelector from './modules/FileSelector';
 
 const MAX_FILE_SIZE = 15 * 1000 * 1000; // (byte), 5MB
-const MAX_CANVAS_SIZE = 2000; // 大きすぎるとiosなどで動かない
+const MAX_CANVAS_SIZE = 2000; // (px), 大きすぎるとiosなどで動かない
 const BG_COLOR = '#ffffff';
 
 const sizeInput = document.querySelector('.js-input-size');
@@ -76,7 +76,6 @@ function draw(image, size) {
 function setCanvasSize(width, height) {
     canvas.style.width = width + "px";
     canvas.style.height = height + "px";
-    canvas.width = width * 2; // for retina
-    canvas.height = height * 2; // for retina
-    ctx.scale(2, 2); // for retina
+    canvas.width = width;
+    canvas.height = height;
 }
