@@ -5,6 +5,13 @@ prepend ConfigBlock
 
 block ContentBlock
   h1.title= title
+  div.option
+    label
+      | output size(px): 
+      input.js-input-size(type="number" step="10" min="0")
+    label
+      | background color: 
+      input.js-input-color(type="color")
   div.select
     input.js-input-image(type="file" accept="image/*")
   canvas.canvas.js-canvas
