@@ -18,22 +18,6 @@ const fileSelector = new FileSelector({
 sizeInput.value = MAX_CANVAS_SIZE;
 colorInput.value = BG_COLOR;
 
-fileSelector.on('select_file', files => {
-    const file = files[0];
-    if (!files || !files.length) {
-        fileSelector.resetFiles();
-        return;
-    }
-    if (!file.type || !file.type.match('image.*')) {
-        fileSelector.resetFiles();
-        return;
-    }
-    if (file.size > MAX_FILE_SIZE) {
-        fileSelector.resetFiles();
-        return;
-    }
-});
-
 fileSelector.on('load_img', image => {
     const maxSize = sizeInput.value || MAX_CANVAS_SIZE;
     const size = Math.min(Math.max(image.width, image.height), maxSize);
