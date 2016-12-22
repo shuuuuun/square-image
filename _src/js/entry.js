@@ -1,7 +1,7 @@
 import FileSelector from './modules/FileSelector';
 
 const MAX_FILE_SIZE = 15 * 1000 * 1000; // (byte), 5MB
-const MAX_CANVAS_SIZE = 2000; // (px), 大きすぎるとiosなどで動かない
+const MAX_CANVAS_SIZE = 1080; // (px), 大きすぎるとiosなどで動かない
 const BG_COLOR = '#ffffff';
 
 const sizeInput = document.querySelector('.js-input-size');
