@@ -1,9 +1,11 @@
 import FileSelector from './modules/FileSelector';
 
 const MAX_CANVAS_SIZE = 1080; // (px), 大きすぎるとiosなどで動かない
+const PADDING = 55; // (px)
 const BG_COLOR = '#ffffff';
 
 const sizeInput = document.querySelector('.js-input-size');
+const paddingInput = document.querySelector('.js-input-padding');
 const colorInput = document.querySelector('.js-input-color');
 const input = document.querySelector('.js-input-image');
 const preview = document.querySelector('.js-preview');
@@ -15,6 +17,7 @@ const fileSelector = new FileSelector({
 });
 
 sizeInput.value = MAX_CANVAS_SIZE;
+paddingInput.value = PADDING;
 colorInput.value = BG_COLOR;
 
 fileSelector.on('load_img', image => {
@@ -33,16 +36,18 @@ function appendImg(src) {
 }
 
 function draw(image, size) {
+    const padding = paddingInput.value || PADDING;
     const bgColor = colorInput.value || BG_COLOR;
     const aspect = image.width / image.height;
+    const imgSize = size - padding * 2;
     let width = image.width || size;
     let height = image.height || size;
-    if (width > size) {
-        width = size;
+    if (width > imgSize) {
+        width = imgSize;
         height = width / aspect;
     }
-    if (height > size) {
-        height = size;
+    if (height > imgSize) {
+        height = imgSize;
         width = height * aspect;
     }
     console.log(width, height);
