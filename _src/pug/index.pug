@@ -15,6 +15,9 @@ block ContentBlock
     label
       | background color: 
       input.js-input-color(type="color")
+    label
+      | ratio: 
+      input.js-input-ratio(type="number" step="0.1" min="0")
   ul.notice
     li ブラウザにより多少画質や色味が変化する可能性があります
     li output sizeが大きすぎると正常に動作しなくなります
