@@ -32,7 +32,8 @@ fileSelector.on('load_img', image => {
 function appendImg(src) {
     const img = new Image();
     img.src = src;
-    preview.appendChild(img);
+    // preview.appendChild(img);
+    preview.insertBefore(img, preview.firstChild)
 }
 
 function draw(image, size) {
