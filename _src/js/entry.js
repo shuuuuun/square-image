@@ -20,18 +20,20 @@ sizeInput.value = MAX_CANVAS_SIZE;
 paddingInput.value = PADDING;
 colorInput.value = BG_COLOR;
 
-fileSelector.on('load_img', image => {
+fileSelector.on('load_img', (image, file) => {
     const maxSize = sizeInput.value || MAX_CANVAS_SIZE;
     const size = Math.min(Math.max(image.width, image.height), maxSize);
+    console.log(file);
     console.log(image.width, image.height, size);
     setCanvasSize(size, size);
     draw(image, size);
-    appendImg(canvas.toDataURL());
+    appendImg(canvas.toDataURL(), file.name);
 });
 
-function appendImg(src) {
+function appendImg(src, alt) {
     const img = new Image();
     img.src = src;
+    img.alt = alt;
     // preview.appendChild(img);
     preview.insertBefore(img, preview.firstChild)
 }

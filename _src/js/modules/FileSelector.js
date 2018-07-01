@@ -40,7 +40,7 @@ export default class FileSelector extends EventEmitter {
     parseMetaData(file, data => {
       const orientation = data.exif ? parseInt(data.exif.get('Orientation'), 10) : 0;
       loadImage(file, image => {
-        this.emit('load_img', image);
+        this.emit('load_img', image, file);
       }, {
         orientation,
       });
